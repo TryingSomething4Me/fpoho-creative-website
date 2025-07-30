@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Fumane Poho Creative Agency</title>
+    <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="asserts/images/FPOHO_CIRCLE.png" alt="Fumane Poho Logo">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">What We Do</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header section-padding">
+            <div class="container animate-on-scroll">
+                <h1>Get in Touch</h1>
+                <p>We'd love to hear about your project. Let's create something amazing together.</p>
+            </div>
+        </section>
+
+        <section class="contact-section section-padding">
+            <div class="container contact-grid">
+                <div class="contact-form-container animate-on-scroll">
+                    <form name="contact" method="POST" data-netlify="true">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="service">Service of Interest</label>
+                            <select id="service" name="service">
+                                <option value="general">General Inquiry</option>
+                                <option value="branding">Brand Identity & Design</option>
+                                <option value="events">Event Planning & Management</option>
+                                <option value="communication">Strategic Communication</option>
+                                <option value="digital">Digital Dexterity</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info animate-on-scroll">
+                    <h3>Contact Details</h3>
+                    <p>Feel free to reach out to us directly through email or WhatsApp.</p>
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@fpoho.co.za">info@fpoho.co.za</a></p>
+                    </div>
+                     <div class="info-item">
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/27760739550" target="_blank" rel="noopener">076 073 9550</a></p>
+                    </div>
+                     <div class="info-item">
+                        <h4>Business Hours</h4>
+                        <p>Monday - Friday<br>9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2024 Fumane Poho Creative Agency. All Rights Reserved.</p>
+            <div class="footer-contact">
+                <span>Email: <a href="mailto:info@fpoho.co.za">info@fpoho.co.za</a></span>
+                <span>WhatsApp: <a href="https://wa.me/27760739550">076 073 9550</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

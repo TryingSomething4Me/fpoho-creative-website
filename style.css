@@ -158,7 +158,8 @@ h1, h2, h3 {
 
 /* --- HERO SECTION (HOME PAGE) --- */
 .hero {
-    background: linear-gradient(rgba(64, 86, 161, 0.8), rgba(64, 86, 161, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+    /* Image Updated */
+    background: linear-gradient(rgba(64, 86, 161, 0.8), rgba(64, 86, 161, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     justify-content: center;
@@ -244,6 +245,8 @@ h1, h2, h3 {
 .about-image img {
     width: 100%;
     border-radius: 10px;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    height: 100%;
 }
 
 .mission-vision {
@@ -431,6 +434,10 @@ h1, h2, h3 {
         grid-template-columns: 1fr;
     }
     
+    .about-image {
+        order: -1; /* Puts image on top on mobile */
+    }
+
     .mission-vision .container, .main-footer .container {
         flex-direction: column;
         gap: 20px;
@@ -439,4 +446,65 @@ h1, h2, h3 {
     .service-list {
         columns: 1;
     }
-}
+}```
+
+---
+
+### **`script.js` (JavaScript for Interactivity)**
+
+*(No changes to this file, but included for completeness.)*
+
+```javascript
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // --- RESPONSIVE NAVIGATION MENU ---
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }));
+    
+    // --- SCROLL-TRIGGERED FADE-IN ANIMATIONS ---
+    const scrollElements = document.querySelectorAll(".animate-on-scroll");
+
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+
+    const displayScrollElement = (element) => {
+        element.classList.add("is-visible");
+    };
+
+    const hideScrollElement = (element) => {
+        element.classList.remove("is-visible");
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+                displayScrollElement(el);
+            } 
+            // Optional: to re-animate when scrolling up
+            // else {
+            //     hideScrollElement(el);
+            // }
+        })
+    }
+
+    // Initial check
+    handleScrollAnimation();
+    window.addEventListener("scroll", () => {
+        handleScrollAnimation();
+    });
+
+});

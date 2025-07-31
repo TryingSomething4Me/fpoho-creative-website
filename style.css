@@ -508,3 +508,49 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+/* --- FLOATING WHATSAPP BUTTON --- */
+.whatsapp-chat-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366; /* Official WhatsApp Green */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 16px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-chat-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    animation: none; /* Stop pulsing on hover */
+}
+
+.whatsapp-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
